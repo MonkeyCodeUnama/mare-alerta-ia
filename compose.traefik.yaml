@@ -1,0 +1,16 @@
+services:
+  weather-model:
+    image: ghcr.io/monkeycodeunama/mare-alerta-ia:latest
+    restart: unless-stopped
+    networks:
+      - mare-alerta-network
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=mare-alerta-network
+      - traefik.http.routers.mare-alerta-ia.rule=Host(`mare-alerta-ia.local`)
+      - traefik.http.routers.mare-alerta-ia.entrypoints=web
+      - traefik.http.services.mare-alerta-ia.loadbalancer.server.port=8000
+
+networks:
+  mare-alerta-network:
+    external: true
