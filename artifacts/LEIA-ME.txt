@@ -1,0 +1,8 @@
+Coloque nesta pasta os arquivos gerados pelo seu notebook:
+- model_bundle.joblib
+- metadata.json
+Opcional: example_request.json e os relatórios.
+
+Copie também o requirements.txt exportado pelo notebook para a raiz do projeto,
+substituindo o arquivo de dependências genéricas. Isso mantém as versões do treino.
+Não há pesos de modelo neste ZIP: o treinamento foi executado no seu ambiente.

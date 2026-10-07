@@ -1,0 +1,377 @@
+{
+  "model_version": "rain-sgd-1fcf160ea59b-epoch-100",
+  "schema_version": "rain-hourly-v1",
+  "data_version": "36f1c6330560ad954d8e4be961d71913641c554115db2bc99358cd6417877fb3",
+  "created_at": "2026-10-07T05:41:24.363673+00:00",
+  "target_source": "gfs_modelled_precipitation",
+  "model_type": "SGDClassifier logistic regression",
+  "operationally_validated": false,
+  "probabilities_calibrated": false,
+  "config": {
+    "horizon_hours": 1,
+    "rain_threshold_mm": 0.1,
+    "validation_start": "2024-01-01T00:00:00Z",
+    "test_start": "2025-01-01T00:00:00Z",
+    "timezone": "America/Belem",
+    "excluded_features": [
+      "rain",
+      "total_column_integrated_water_vapour"
+    ],
+    "max_row_missing_fraction": 0.35,
+    "max_train_column_missing_fraction": 0.5,
+    "alpha": 0.001,
+    "learning_rate": "invscaling",
+    "eta0": 0.01,
+    "power_t": 0.5,
+    "seed": 42,
+    "batch_size": 512,
+    "patience": 12,
+    "min_delta": 0.0001,
+    "threshold_policy": "max_validation_f1"
+  },
+  "feature_names": [
+    "temperature_2m",
+    "relative_humidity_2m",
+    "dew_point_2m",
+    "pressure_msl",
+    "surface_pressure",
+    "cloud_cover",
+    "cloud_cover_low",
+    "cloud_cover_mid",
+    "cloud_cover_high",
+    "wind_speed_10m",
+    "wind_gusts_10m",
+    "cape",
+    "relative_humidity_850hPa",
+    "relative_humidity_700hPa",
+    "relative_humidity_500hPa",
+    "temperature_850hPa",
+    "temperature_700hPa",
+    "geopotential_height_500hPa",
+    "precipitation",
+    "wind_direction_sin",
+    "wind_direction_cos",
+    "hour_sin",
+    "hour_cos",
+    "year_sin",
+    "year_cos"
+  ],
+  "required_raw_features": [
+    "temperature_2m",
+    "relative_humidity_2m",
+    "dew_point_2m",
+    "pressure_msl",
+    "surface_pressure",
+    "cloud_cover",
+    "cloud_cover_low",
+    "cloud_cover_mid",
+    "cloud_cover_high",
+    "wind_speed_10m",
+    "wind_direction_10m",
+    "wind_gusts_10m",
+    "cape",
+    "relative_humidity_850hPa",
+    "relative_humidity_700hPa",
+    "relative_humidity_500hPa",
+    "temperature_850hPa",
+    "temperature_700hPa",
+    "geopotential_height_500hPa",
+    "precipitation"
+  ],
+  "units": {
+    "temperature_2m": "°C",
+    "relative_humidity_2m": "%",
+    "dew_point_2m": "°C",
+    "pressure_msl": "hPa",
+    "surface_pressure": "hPa",
+    "cloud_cover": "%",
+    "cloud_cover_low": "%",
+    "cloud_cover_mid": "%",
+    "cloud_cover_high": "%",
+    "wind_speed_10m": "km/h",
+    "wind_direction_10m": "°",
+    "wind_gusts_10m": "km/h",
+    "cape": "J/kg",
+    "relative_humidity_850hPa": "%",
+    "relative_humidity_700hPa": "%",
+    "relative_humidity_500hPa": "%",
+    "temperature_850hPa": "°C",
+    "temperature_700hPa": "°C",
+    "geopotential_height_500hPa": "m",
+    "precipitation": "mm"
+  },
+  "versions": {
+    "python": "3.13.16",
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "joblib": "1.6.0"
+  },
+  "best_epoch": 100,
+  "epochs_completed": 100,
+  "decision_threshold": 0.592680861691929,
+  "dataset": {
+    "raw_rows": 35064,
+    "grid_rows": 35064,
+    "missing_timestamps": 0,
+    "invalid_values": {
+      "temperature_2m": 0,
+      "relative_humidity_2m": 0,
+      "dew_point_2m": 0,
+      "pressure_msl": 0,
+      "surface_pressure": 0,
+      "cloud_cover": 33,
+      "cloud_cover_low": 53,
+      "cloud_cover_mid": 12,
+      "cloud_cover_high": 19,
+      "wind_speed_10m": 0,
+      "wind_direction_10m": 0,
+      "wind_gusts_10m": 0,
+      "cape": 0,
+      "total_column_integrated_water_vapour": 0,
+      "relative_humidity_850hPa": 0,
+      "relative_humidity_700hPa": 0,
+      "relative_humidity_500hPa": 0,
+      "temperature_850hPa": 0,
+      "temperature_700hPa": 0,
+      "geopotential_height_500hPa": 0,
+      "rain": 0,
+      "precipitation": 0
+    },
+    "missing_counts": {
+      "temperature_2m": 0,
+      "relative_humidity_2m": 0,
+      "dew_point_2m": 0,
+      "pressure_msl": 0,
+      "surface_pressure": 0,
+      "cloud_cover": 33,
+      "cloud_cover_low": 53,
+      "cloud_cover_mid": 12,
+      "cloud_cover_high": 19,
+      "wind_speed_10m": 0,
+      "wind_direction_10m": 0,
+      "wind_gusts_10m": 0,
+      "cape": 0,
+      "total_column_integrated_water_vapour": 23412,
+      "relative_humidity_850hPa": 0,
+      "relative_humidity_700hPa": 0,
+      "relative_humidity_500hPa": 0,
+      "temperature_850hPa": 0,
+      "temperature_700hPa": 0,
+      "geopotential_height_500hPa": 0,
+      "rain": 17687,
+      "precipitation": 345
+    },
+    "missing_fraction": {
+      "temperature_2m": 0.0,
+      "relative_humidity_2m": 0.0,
+      "dew_point_2m": 0.0,
+      "pressure_msl": 0.0,
+      "surface_pressure": 0.0,
+      "cloud_cover": 0.0009411362080766598,
+      "cloud_cover_low": 0.001511521788729181,
+      "cloud_cover_mid": 0.00034223134839151266,
+      "cloud_cover_high": 0.0005418663016198951,
+      "wind_speed_10m": 0.0,
+      "wind_direction_10m": 0.0,
+      "wind_gusts_10m": 0.0,
+      "cape": 0.0,
+      "total_column_integrated_water_vapour": 0.6676933607118412,
+      "relative_humidity_850hPa": 0.0,
+      "relative_humidity_700hPa": 0.0,
+      "relative_humidity_500hPa": 0.0,
+      "temperature_850hPa": 0.0,
+      "temperature_700hPa": 0.0,
+      "geopotential_height_500hPa": 0.0,
+      "rain": 0.504420488250057,
+      "precipitation": 0.009839151266255989
+    },
+    "params": {
+      "latitude": -1.4558,
+      "longitude": -48.5044,
+      "start_date": "2022-01-01",
+      "end_date": "2025-12-31",
+      "hourly": "temperature_2m,relative_humidity_2m,dew_point_2m,pressure_msl,surface_pressure,cloud_cover,cloud_cover_low,cloud_cover_mid,cloud_cover_high,wind_speed_10m,wind_direction_10m,wind_gusts_10m,cape,total_column_integrated_water_vapour,relative_humidity_850hPa,relative_humidity_700hPa,relative_humidity_500hPa,temperature_850hPa,temperature_700hPa,geopotential_height_500hPa,rain,precipitation",
+      "models": "gfs_global",
+      "timezone": "UTC",
+      "wind_speed_unit": "kmh",
+      "precipitation_unit": "mm",
+      "temperature_unit": "celsius"
+    },
+    "returned_location": {
+      "latitude": -1.4643631,
+      "longitude": -48.515625
+    },
+    "units": {
+      "time": "iso8601",
+      "temperature_2m": "°C",
+      "relative_humidity_2m": "%",
+      "dew_point_2m": "°C",
+      "pressure_msl": "hPa",
+      "surface_pressure": "hPa",
+      "cloud_cover": "%",
+      "cloud_cover_low": "%",
+      "cloud_cover_mid": "%",
+      "cloud_cover_high": "%",
+      "wind_speed_10m": "km/h",
+      "wind_direction_10m": "°",
+      "wind_gusts_10m": "km/h",
+      "cape": "J/kg",
+      "total_column_integrated_water_vapour": "kg/m²",
+      "relative_humidity_850hPa": "%",
+      "relative_humidity_700hPa": "%",
+      "relative_humidity_500hPa": "%",
+      "temperature_850hPa": "°C",
+      "temperature_700hPa": "°C",
+      "geopotential_height_500hPa": "m",
+      "rain": "mm",
+      "precipitation": "mm"
+    }
+  },
+  "splits": {
+    "train": {
+      "rows": 17174,
+      "feature_start": "2022-01-01T00:00:00+00:00",
+      "feature_end": "2023-12-31T22:00:00+00:00",
+      "target_end": "2023-12-31T23:00:00+00:00",
+      "event_fraction": 0.29894025853033657
+    },
+    "validation": {
+      "rows": 8783,
+      "feature_start": "2024-01-01T00:00:00+00:00",
+      "feature_end": "2024-12-31T22:00:00+00:00",
+      "target_end": "2024-12-31T23:00:00+00:00",
+      "event_fraction": 0.2643743595582375
+    },
+    "test": {
+      "rows": 8759,
+      "feature_start": "2025-01-01T00:00:00+00:00",
+      "feature_end": "2025-12-31T22:00:00+00:00",
+      "target_end": "2025-12-31T23:00:00+00:00",
+      "event_fraction": 0.31784450279712295
+    }
+  },
+  "metrics": {
+    "validation_selected_threshold": {
+      "n": 8783,
+      "prevalence": 0.2643743595582375,
+      "threshold": 0.592680861691929,
+      "precision": 0.7596930533117933,
+      "recall": 0.810077519379845,
+      "f1": 0.7840766986244269,
+      "balanced_accuracy": 0.8589932558979398,
+      "pr_auc_average_precision": 0.8700214111714055,
+      "roc_auc": 0.9438053484892659,
+      "brier": 0.10686332405171675,
+      "log_loss": 0.35150773248416917,
+      "confusion_matrix_order_0_1": [
+        [
+          5866,
+          595
+        ],
+        [
+          441,
+          1881
+        ]
+      ]
+    },
+    "test_model_selected_threshold": {
+      "n": 8759,
+      "prevalence": 0.31784450279712295,
+      "threshold": 0.592680861691929,
+      "precision": 0.7857911733046287,
+      "recall": 0.7866379310344828,
+      "f1": 0.786214324178783,
+      "balanced_accuracy": 0.8433608065214255,
+      "pr_auc_average_precision": 0.8795310642452061,
+      "roc_auc": 0.9336480426104938,
+      "brier": 0.11938528782359363,
+      "log_loss": 0.3871892734331338,
+      "confusion_matrix_order_0_1": [
+        [
+          5378,
+          597
+        ],
+        [
+          594,
+          2190
+        ]
+      ]
+    },
+    "test_model_threshold_0_5": {
+      "n": 8759,
+      "prevalence": 0.31784450279712295,
+      "threshold": 0.5,
+      "precision": 0.7095642000584966,
+      "recall": 0.8714080459770115,
+      "f1": 0.7822021602450427,
+      "balanced_accuracy": 0.8526077886788823,
+      "pr_auc_average_precision": 0.8795310642452061,
+      "roc_auc": 0.9336480426104938,
+      "brier": 0.11938528782359363,
+      "log_loss": 0.3871892734331338,
+      "confusion_matrix_order_0_1": [
+        [
+          4982,
+          993
+        ],
+        [
+          358,
+          2426
+        ]
+      ]
+    },
+    "test_persistence": {
+      "n": 8759,
+      "prevalence": 0.31784450279712295,
+      "threshold": 0.5,
+      "precision": 0.7844827586206896,
+      "recall": 0.7844827586206896,
+      "f1": 0.7844827586206896,
+      "balanced_accuracy": 0.8420321742894243,
+      "pr_auc_average_precision": 0.6839141690035416,
+      "roc_auc": 0.8420321742894241,
+      "brier": 0.13700194086082887,
+      "log_loss": 2.2082104734976413,
+      "confusion_matrix_order_0_1": [
+        [
+          5375,
+          600
+        ],
+        [
+          600,
+          2184
+        ]
+      ]
+    },
+    "test_climatology": {
+      "n": 8759,
+      "prevalence": 0.31784450279712295,
+      "threshold": 0.5,
+      "precision": 0.6524390243902439,
+      "recall": 0.46120689655172414,
+      "f1": 0.5404040404040404,
+      "balanced_accuracy": 0.6733649545520127,
+      "pr_auc_average_precision": 0.6412012132738334,
+      "roc_auc": 0.8075290362141104,
+      "brier": 0.1618854236490263,
+      "log_loss": 0.5109875335677876,
+      "confusion_matrix_order_0_1": [
+        [
+          5291,
+          684
+        ],
+        [
+          1500,
+          1284
+        ]
+      ]
+    }
+  },
+  "limitations": [
+    "Alvo calculado pelo GFS, sem observações de estação",
+    "Arquivo não comprova disponibilidade temporal das rodadas",
+    "Uma localidade e horizonte de uma hora",
+    "Probabilidades precisam de avaliação de calibração e validação operacional"
+  ]
+}
