@@ -1,8 +1,16 @@
 services:
   weather-model:
     build: .
+    image: mare-alerta-ia:${IA_IMAGE_TAG:-local}
     ports:
       - "127.0.0.1:8000:8000"
+    environment:
+      IA_API_KEY: ${IA_CHUVA_API_KEY:?IA_CHUVA_API_KEY is required}
     volumes:
       - ./artifacts:/app/artifacts:ro
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
