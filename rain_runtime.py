@@ -70,8 +70,8 @@ def validate_location(latitude, longitude):
     longitude = numeric_or_null(longitude, "longitude")
     if not np.isfinite(latitude) or not np.isfinite(longitude):
         raise ValueError("Coordenadas obrigatórias")
-    if abs(latitude - (-1.4558)) > 0.01 or abs(longitude - (-48.5044)) > 0.01:
-        raise ValueError("Modelo restrito ao ponto de referência de Belém")
+    if not (-1.70 <= latitude <= -1.00) or not (-48.70 <= longitude <= -48.20):
+        raise ValueError("Modelo restrito à Região Metropolitana de Belém")
 
 
 def load_dataset(path):
